@@ -11,10 +11,7 @@ interface LoginResponse {
   token: string;
 }
 
-const corsHandler = cors({
-  origin: "*",
-  methods: ["POST", "GET", "HEAD"],
-});
+const corsHandler = cors();
 
 const handler = nc<NextApiRequest, NextApiResponse<LoginResponse>>()
   .use(corsHandler)
